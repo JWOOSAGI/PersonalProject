@@ -3,15 +3,14 @@
 import { useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
 import Link from "next/link";
-import './globals.css'
 import { useDispatch } from "react-redux";
-import { existsUsername, loginUser } from "./components/user/service/user-service";
 import { useSelector } from "react-redux";
-import { existsUsernameMessage, getAuth } from "./components/user/service/user-slice";
-import { IUser } from "./components/user/model/user";
 import nookies, { parseCookies, setCookie } from 'nookies'
 import { jwtDecode } from "jwt-decode";
 import { url } from "inspector";
+import { existsUsernameMessage, getAuth } from '@/app/components/user/service/user-slice';
+import { existsUsername, loginUser } from '@/app/components/user/service/user-service';
+import { IUser } from '@/app/components/user/model/user';
 
 export default function Home() {
   const router = useRouter();

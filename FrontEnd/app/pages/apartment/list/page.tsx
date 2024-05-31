@@ -82,10 +82,11 @@ const ApartmentsPage: NextPage = () => {
 
     return (
       <>
-        <AppAppBar mode={"light"} toggleColorMode={() => {}} /> {/* AppAppBar를 사용 */}
-        <h2>부동산 목록</h2>
-        <div style={{ marginBottom: '1px' }}>
-          <FormControl sx={{ m: 1, width: 250 }}>
+        <header style={{ backgroundColor: '#f8f9fa', padding: '10px 0', textAlign: 'center', borderBottom: '1px solid #dee2e6' }}>
+          <h1><img src="/SmallBangEz.png" alt="팀 아이콘" /> 부동산 목록</h1>
+        </header>
+        <div style={{ display: 'flex', alignItems: 'center', marginLeft: '262px', marginTop: '20px' }}>
+          <FormControl sx={{ m: 3, width: 250, transform: 'translateX(1px)' }}>
             <InputLabel id="demo-multiple-chip-label">거래 유형</InputLabel>
             <Select
               labelId="demo-multiple-chip-label"
@@ -117,6 +118,7 @@ const ApartmentsPage: NextPage = () => {
         </div>
       </>
     );
+    
   };
 
   const [open, setOpen] = useState(false);
@@ -146,7 +148,8 @@ const ApartmentsPage: NextPage = () => {
   return (
     <>
       <MultipleSelectChip />
-      <div style={{ height: 500, width: "100%" }}>
+      <div style={{ display: 'flex', justifyContent: 'center', height: 500 }}>
+        <div style={{ width: "70%" }}>
         {allApartments && (
           <DataGrid
             rows={allApartments}
@@ -156,6 +159,7 @@ const ApartmentsPage: NextPage = () => {
             pagination
           />
         )}
+        </div>
       </div>
       <Modal
         open={open}
@@ -165,10 +169,22 @@ const ApartmentsPage: NextPage = () => {
       >
         <Box sx={style}>
           <Typography id="modal-title" variant="h6" component="h2">
-            {/* {selectedApartment?.title} */}
+            text in area1
           </Typography>
           <Typography id="modal-description" sx={{ mt: 2 }}>
-            {/* {selectedApartment?.description} */}
+            gogo1
+          </Typography>
+          <Typography id="modal-title" variant="h6" component="h2"sx={{ mt: 2 }}>
+            text in area2
+          </Typography>
+          <Typography id="modal-description" sx={{ mt: 2 }}>
+            gogo2
+          </Typography>
+          <Typography id="modal-title" variant="h6" component="h2"sx={{ mt: 2 }}>
+            text in area3
+          </Typography>
+          <Typography id="modal-description" sx={{ mt: 2 }}>
+            gogo3
           </Typography>
         </Box>
       </Modal>
