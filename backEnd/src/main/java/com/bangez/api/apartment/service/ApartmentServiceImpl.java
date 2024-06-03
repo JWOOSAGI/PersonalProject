@@ -5,8 +5,10 @@ import com.bangez.api.apartment.model.ApartmentModel;
 import com.bangez.api.apartment.model.ApartmentModelDTO;
 import com.bangez.api.apartment.repository.ApartmentRepository;
 import lombok.RequiredArgsConstructor;
+import org.eclipse.jdt.internal.compiler.env.ISourceType;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.w3c.dom.ls.LSOutput;
 
 import java.util.Optional;
 
@@ -17,9 +19,10 @@ public class ApartmentServiceImpl implements ApartmentService {
     private final ApartmentRepository repository;
 
     @Override
-    public Optional findById(Long id) {
-        return repository.findById(id);
+    public Optional<ApartmentModelDTO> findById(Long id) {
+        return repository.findById(id).map(this ::entityToDTO);
     }
+
 
     @Override
     @Transactional

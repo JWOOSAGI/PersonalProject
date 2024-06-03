@@ -42,7 +42,6 @@ export default function UserDetailPage (props:any) {
     <span>직업</span> <Typography textAlign="center" sx={{fontSize:"1.5rem"}}>{user.job}</Typography>
     </>
     )}
-
     <Button variant="outlined" onClick={handleEditClick}>수정</Button>
     <Button variant="outlined" onClick={handleDeleteClick}>탈퇴</Button>
     </>)

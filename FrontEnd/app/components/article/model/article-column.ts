@@ -1,3 +1,4 @@
+
 export interface ArticleColumn{
     id? : number
     title? : string

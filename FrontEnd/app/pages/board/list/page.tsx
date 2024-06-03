@@ -1,7 +1,6 @@
 'use client'
 
 import CardButton from "@/app/atoms/button/CardButton"
-import { IApartment } from '@/app/components/apartment/model/apartment'
 import { IBoard } from "@/app/components/board/model/board"
 import { findAllBoards } from "@/app/components/board/service/board-service"
 import { getAllBoards } from "@/app/components/board/service/board-slice"
@@ -19,7 +18,7 @@ export default function BoardCards() {
 
     return (<>
     <h1>게시판 목록 들어옴</h1>
-        {allBoards.map((apartment: IApartment)=>(<CardButton key={apartment.id} id={apartment.id} buildingName={apartment.buildingName}/>))}
+        {allBoards.map((board: IBoard)=>(<CardButton key={board.id} id={board.id} title={board.title} description={board.description}/>))}
     </>
 )
 }

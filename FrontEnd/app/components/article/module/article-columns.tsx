@@ -9,7 +9,7 @@ interface CellType{
 
 export default function ArticleColumns(): GridColDef[]{
 
-
+   
     return [
         {
             flex: 0.04,

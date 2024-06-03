@@ -1,6 +1,9 @@
-import { Link, Typography } from "@mui/material";
+import { Link, Typography, Button } from "@mui/material";
 import { GridColDef } from "@mui/x-data-grid";
 import { ApartmentColumn } from "../model/apartment-column";
+import { IApartment } from '@/app/components/apartment/model/apartment'; // Import IApartment
+import { PG } from '../../common/enums/PG';
+import MoveButton from '@/app/atoms/button/MoveButton';
 
 interface CellType {
   row: ApartmentColumn;
@@ -67,7 +70,6 @@ export default function ApartmentColumns(): GridColDef[] {
         </Typography>
       )
     },
-    
     {
       flex: 0.04,
       minWidth: 30,
@@ -97,6 +99,20 @@ export default function ApartmentColumns(): GridColDef[] {
           {row.date}
         </Typography>
       )
-    }
+    },
+    {
+      flex: 0.1,
+      minWidth: 100,
+      sortable: false,
+      filterable: false,
+      field: "details",
+      headerName: "자세히 보기",
+      headerAlign: "center",
+      renderCell: ({ row }: CellType) => (
+        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
+          <MoveButton text={'자세히 보기'} path={`${PG.APARTMENT}/detail/${row.id}`} />
+        </div>
+      )
+    },
   ];
 }

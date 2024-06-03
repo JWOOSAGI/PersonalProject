@@ -26,7 +26,7 @@ const Join:NextPage = () =>{
   const handlePhone = (e: any) => {
     setPhone(e.target.value)
   }
-  const [job, setJob] = useState('')
+  const [job, setJob] = useState('')  
   const handleJob = (e: any) => {
     setJob(e.target.value)
   }

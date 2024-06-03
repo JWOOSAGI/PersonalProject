@@ -26,7 +26,7 @@ export default function ArticleDetailPage (props:any){
         const handleEditClick = () => {
             console.log('수정 버튼 클릭')
         }
-   
+
 
     return (<>
     {props.params.id}번 게시글 상세<br />

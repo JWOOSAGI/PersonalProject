@@ -3,5 +3,6 @@ export const enum PG{
     BOARD='/pages/board',
     DEMO='/pages/demo',
     COUNT='/pages/counter',
-    ARTICLE='/pages/article'
+    ARTICLE='/pages/article',
+    APARTMENT='/pages/apartment'
 }

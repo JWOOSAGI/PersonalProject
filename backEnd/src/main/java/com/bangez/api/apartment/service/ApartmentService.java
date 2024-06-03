@@ -11,7 +11,7 @@ public interface ApartmentService {
 
     void deleteById(Long id);
 
-    Optional<ApartmentModel> findById(Long id);
+    Optional<ApartmentModelDTO> findById(Long id);
 
     String modify(Long id, ApartmentModelDTO dto);
 

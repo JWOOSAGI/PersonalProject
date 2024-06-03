@@ -1,9 +1,7 @@
 'use client'
 
-import { useRouter } from "next/navigation"
 import { DataGrid } from '@mui/x-data-grid';
-import { useState, useEffect } from "react"
-import { Box, Button, Input } from '@mui/material';
+import { Box } from '@mui/material';
 import { useSelector, useDispatch } from 'react-redux'
 import { NextPage } from "next";
 import { findAllArticles } from "@/app/components/article/service/article-service";
@@ -11,6 +9,7 @@ import { getAllArticles } from "@/app/components/article/service/article-slice";
 import ArticleColumns from "@/app/components/article/module/article-columns";
 import { PG } from "@/app/components/common/enums/PG";
 import MoveButton from "@/app/atoms/button/MoveButton";
+import { useEffect } from 'react';
 // import React from "react";
 
 
@@ -38,7 +37,7 @@ const ArticleListPage: NextPage = ({ data }: any) => {
         pageSizeOptions={[5]}
         checkboxSelection
         disableRowSelectionOnClick
-      />}
+      />} 
     </Box>
     <MoveButton text={'수정'} path={'/'}/>
     <MoveButton text={'삭제'} path={'/'}/>
